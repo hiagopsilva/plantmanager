@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import colors from '../../styles/colors';
 
-import wateringImg from '../assets/watering.png';
+import wateringImg from '../../assets/watering.png';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -26,7 +26,7 @@ export const Image = styled.Image.attrs({
 
 export const SubTitle = styled.Text`
   text-align: center;
-  font-size: 18;
+  font-size: 18px;
   padding: 0 20px;
   color: ${colors.heading};
 `;
