@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Button } from '../../components/Button';
+// import { Button } from '../../components/Button';
 
-import { Container, Title, SubTitle, Image } from './styles'
+import { Container, Title, SubTitle, Image, Button, ButtonText } from './styles'
 
 const Welcome: FC = () => {
   return (
@@ -19,7 +19,11 @@ const Welcome: FC = () => {
         Nós cuidamos de lembrar você sempre que precisar.
       </SubTitle>
 
-      <Button />
+      <Button activeOpacity={0.8}>
+        <ButtonText>
+          {'>'}
+        </ButtonText>
+      </Button>
     </Container>
   )
 };

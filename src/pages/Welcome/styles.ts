@@ -32,4 +32,20 @@ export const SubTitle = styled.Text`
 `;
 
 
+export const Button = styled.TouchableOpacity`
+  background:  ${colors.green};
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  height: 56px;
+  width: 56px;
+`;
+
+export const ButtonText = styled.Text`
+  color: ${colors.white};
+  font-size: 24px;
+`;
+
+
 
