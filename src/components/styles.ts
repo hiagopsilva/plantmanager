@@ -5,10 +5,10 @@ export const Wrapper = styled.TouchableOpacity`
   background:  ${colors.green};
   justify-content: center;
   align-items: center;
-  border-radius: 16;
-  margin-bottom: 10;
-  height: 56;
-  width: 56;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  height: 56px;
+  width: 56px;
 `;
 
 export const Text = styled.Text`
