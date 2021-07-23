@@ -1,12 +1,13 @@
 import styled from 'styled-components/native';
 import colors from '../../styles/colors';
+import { Dimensions } from 'react-native'
 
 import wateringImg from '../../assets/watering.png';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const Title = styled.Text`
@@ -18,10 +19,10 @@ export const Title = styled.Text`
 `;
 
 export const Image = styled.Image.attrs({
-  source: wateringImg
+  source: wateringImg,
+  resizeMode: 'contain'
 })`
-  width: 292px;
-  height: 284px;
+  height: ${Dimensions.get('window').width * 0.7};
 `;
 
 export const SubTitle = styled.Text`
