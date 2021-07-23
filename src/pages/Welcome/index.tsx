@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Container, Title, SubTitle, Image, Button, ButtonText } from './styles'
+import { Container, Title, SubTitle, Image, Button, ButtonText, ArrowIcon } from './styles'
 
 const Welcome: FC = () => {
   return (
@@ -20,7 +20,7 @@ const Welcome: FC = () => {
 
       <Button activeOpacity={0.8}>
         <ButtonText>
-          {'>'}
+         <ArrowIcon />
         </ButtonText>
       </Button>
     </Container>

@@ -3,6 +3,7 @@ import colors from '../../styles/colors';
 import { Dimensions } from 'react-native'
 
 import wateringImg from '../../assets/watering.png';
+import { Feather } from '@expo/vector-icons';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -46,6 +47,12 @@ export const Button = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   color: ${colors.white};
   font-size: 24px;
+`;
+
+export const ArrowIcon = styled(Feather).attrs({
+  name: "chevron-right"
+})`
+  font-size: 32px;
 `;
 
 
