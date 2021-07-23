@@ -1,8 +1,15 @@
 import React, { FC } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import { Container, Title, SubTitle, Image, Button, ArrowIcon, Content } from './styles'
 
 const Welcome: FC = () => {
+  const navigation = useNavigation()
+
+  const handleStart = () => {
+    navigation.navigate('UserIdentification')
+  }
+
   return (
     <Container>
       <Content>
@@ -19,7 +26,7 @@ const Welcome: FC = () => {
           Nós cuidamos de lembrar você sempre que precisar.
         </SubTitle>
 
-        <Button activeOpacity={0.8}>
+        <Button activeOpacity={0.8} onPress={handleStart}>
           <ArrowIcon />
         </Button>
       </Content>

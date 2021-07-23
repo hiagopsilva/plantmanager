@@ -20,7 +20,7 @@ const Confirmation: FC = () => {
         </SubTitle>
 
         <Footer>
-          <Button />
+          <Button title="Confirmar" />
         </Footer>
       </Content>
     </Container>
