@@ -8,18 +8,23 @@ import { Feather } from '@expo/vector-icons';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
+`;
+
+export const Content = styled.View`
+  flex: 1;
   align-items: center;
   justify-content: space-around;
+  padding: 0 20px;
 `;
 
 export const Title = styled.Text`
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   color: ${colors.heading};
   margin-top: 38px;
   font-family: ${fonts.heading};
-  line-height: 38px;
+  line-height: 34px;
 `;
 
 export const Image = styled.Image.attrs({
