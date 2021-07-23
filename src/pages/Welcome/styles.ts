@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import { Dimensions } from 'react-native'
 
 import wateringImg from '../../assets/watering.png';
@@ -17,6 +18,8 @@ export const Title = styled.Text`
   text-align: center;
   color: ${colors.heading};
   margin-top: 38px;
+  font-family: ${fonts.heading};
+  line-height: 38px;
 `;
 
 export const Image = styled.Image.attrs({
@@ -31,8 +34,8 @@ export const SubTitle = styled.Text`
   font-size: 18px;
   padding: 0 20px;
   color: ${colors.heading};
+  font-family: ${fonts.text};
 `;
-
 
 export const Button = styled.TouchableOpacity`
   background:  ${colors.green};
@@ -44,15 +47,11 @@ export const Button = styled.TouchableOpacity`
   width: 56px;
 `;
 
-export const ButtonText = styled.Text`
-  color: ${colors.white};
-  font-size: 24px;
-`;
-
 export const ArrowIcon = styled(Feather).attrs({
   name: "chevron-right"
 })`
   font-size: 32px;
+  color: ${colors.white};
 `;
 
 

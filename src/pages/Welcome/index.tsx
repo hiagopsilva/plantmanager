@@ -19,9 +19,7 @@ const Welcome: FC = () => {
       </SubTitle>
 
       <Button activeOpacity={0.8}>
-        <ButtonText>
          <ArrowIcon />
-        </ButtonText>
       </Button>
     </Container>
   )
