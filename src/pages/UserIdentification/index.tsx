@@ -1,20 +1,45 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Platform } from 'react-native';
 import { Button } from '../../components/Button';
 import { Container, Wrapper, Content, WrapperForm, ContentForm,  SmileIcon, Title, Input, Footer } from './styles'; 
 
 const UserIdentification: FC = () => {
+  const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
+  const [name, setName] = useState<string>('');
+
+  const handleInputBlur = () => {
+    setIsFocused(false)
+    setIsFilled(!!name)
+  }
+
+  const handleInputFocus = () => {
+    setIsFocused(true)
+  }
+
+  const handleInputChange = (value: string) => {
+    setIsFilled(!!value)
+    setName(value)
+  }
+
   return (
     <Container>
       <Wrapper behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <Content>
           <WrapperForm>
             <ContentForm>
-              <SmileIcon>😁</SmileIcon>
+              <SmileIcon>{ isFilled ? '😀😁' : '😀' }</SmileIcon>
               <Title>Como podemos {'\n'} chamar você?</Title>
             </ContentForm>
 
-            <Input placeholder="Digite um nome" />
+            <Input 
+              placeholder="Digite um nome" 
+              onBlur={handleInputBlur} 
+              onFocus={handleInputFocus} 
+              isFocused={isFocused}
+              isFilled={isFilled}
+              onChangeText={handleInputChange}
+            />
 
             <Footer>
               <Button />

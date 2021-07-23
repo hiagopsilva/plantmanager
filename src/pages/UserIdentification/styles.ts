@@ -56,6 +56,8 @@ export const Input = styled.TextInput`
   margin-top: 50px;
   padding: 10px;
   text-align: center;
+
+  border-color: ${props => props.isFocused || props.isFilled ? `${colors.green}` : `${colors.gray}`};
 `;
 
 export const Footer = styled.View`
