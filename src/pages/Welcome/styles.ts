@@ -31,7 +31,7 @@ export const Image = styled.Image.attrs({
   source: wateringImg,
   resizeMode: 'contain'
 })`
-  height: ${Dimensions.get('window').width * 0.7};
+  height: ${Dimensions.get('window').width * 0.7}px;
 `;
 
 export const SubTitle = styled.Text`
