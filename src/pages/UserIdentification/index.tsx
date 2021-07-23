@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Platform } from 'react-native';
+import { Keyboard, Platform, TouchableWithoutFeedback } from 'react-native';
 import { Button } from '../../components/Button';
 import { Container, Wrapper, Content, WrapperForm, ContentForm,  SmileIcon, Title, Input, Footer } from './styles'; 
 
@@ -32,27 +32,29 @@ const UserIdentification: FC = () => {
   return (
     <Container>
       <Wrapper behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <Content>
-          <WrapperForm>
-            <ContentForm>
-              <SmileIcon>{ isFilled ? '😁' : '😀' }</SmileIcon>
-              <Title>Como podemos {'\n'} chamar você?</Title>
-            </ContentForm>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <Content>
+            <WrapperForm>
+              <ContentForm>
+                <SmileIcon>{ isFilled ? '😁' : '😀' }</SmileIcon>
+                <Title>Como podemos {'\n'} chamar você?</Title>
+              </ContentForm>
 
-            <Input 
-              placeholder="Digite um nome" 
-              onBlur={handleInputBlur} 
-              onFocus={handleInputFocus} 
-              isFocused={isFocused}
-              isFilled={isFilled}
-              onChangeText={handleInputChange}
-            />
+              <Input 
+                placeholder="Digite um nome" 
+                onBlur={handleInputBlur} 
+                onFocus={handleInputFocus} 
+                isFocused={isFocused}
+                isFilled={isFilled}
+                onChangeText={handleInputChange}
+              />
 
-            <Footer>
-              <Button onPress={handleSubmit} title="Confirmar" />
-            </Footer>
-          </WrapperForm>
-        </Content>
+              <Footer>
+                <Button onPress={handleSubmit} title="Confirmar" />
+              </Footer>
+            </WrapperForm>
+          </Content>
+        </TouchableWithoutFeedback>
       </Wrapper>
     </Container>
   )
