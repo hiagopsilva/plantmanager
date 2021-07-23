@@ -1,13 +1,16 @@
 import React, { FC } from 'react';
+import { TouchableOpacityProps } from 'react-native';
 import { Wrapper, Text } from './styles'; 
 
-type Props = {}
+interface Props extends TouchableOpacityProps {
+  title: string;
+}
 
-const Button: FC<Props> = () => {
+const Button = ({ title, ...rest }: Props) => {
   return (
-    <Wrapper activeOpacity={0.8}>
+    <Wrapper activeOpacity={0.8} {...rest}>
       <Text>
-        Confirmar
+        {title}
       </Text>
     </Wrapper>
   )
