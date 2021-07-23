@@ -7,7 +7,7 @@ const Button: FC<Props> = () => {
   return (
     <Wrapper activeOpacity={0.8}>
       <Text>
-        {'>'}
+        Confirmar
       </Text>
     </Wrapper>
   )
