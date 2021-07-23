@@ -28,7 +28,7 @@ const UserIdentification: FC = () => {
         <Content>
           <WrapperForm>
             <ContentForm>
-              <SmileIcon>{ isFilled ? '😀😁' : '😀' }</SmileIcon>
+              <SmileIcon>{ isFilled ? '😁' : '😀' }</SmileIcon>
               <Title>Como podemos {'\n'} chamar você?</Title>
             </ContentForm>
 
