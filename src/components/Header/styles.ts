@@ -9,7 +9,7 @@ export const Wrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding-vertical: 20px;
   margin-top: ${getStatusBarHeight()};
 `;
 
@@ -26,7 +26,7 @@ export const UserName = styled.Text`
   font-size: 32px;
   color: ${colors.heading};
   font-family: ${fonts.heading};
-  line-height: 40;
+  line-height: 40px;
 `;
 
 export const Image = styled.Image`
