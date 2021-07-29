@@ -3,12 +3,12 @@ import { RectButtonProps } from 'react-native-gesture-handler';
 
 import { Wrapper, Text } from './styles'; 
 
-interface EnviromentButtonProps extends RectButtonProps {
+interface EnvironmentButtonProps extends RectButtonProps {
   title: string;
   active?: boolean
 }
 
-const EnviromentButton: FC<EnviromentButtonProps> = ({
+const EnvironmentButton: FC<EnvironmentButtonProps> = ({
   title, 
   active = false, 
   ...rest
@@ -20,4 +20,4 @@ const EnviromentButton: FC<EnviromentButtonProps> = ({
   )
 };
 
-export { EnviromentButton };
+export { EnvironmentButton };
