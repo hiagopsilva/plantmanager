@@ -1,11 +1,17 @@
 import React, { FC } from 'react';
-import { Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Button } from '../../components/Button';
 
 import { Container, Content, SmileIcon, Title, SubTitle, Footer } from './styles'; 
 
 
 const Confirmation: FC = () => {
+  const navigation = useNavigation()
+
+  const handleMoveOn = () => {
+    navigation.navigate('PlantSelect')
+  }
+  
   return (
     <Container>
       <Content>
@@ -20,7 +26,7 @@ const Confirmation: FC = () => {
         </SubTitle>
 
         <Footer>
-          <Button title="Confirmar" />
+          <Button title="Confirmar" onPress={handleMoveOn} />
         </Footer>
       </Content>
     </Container>
