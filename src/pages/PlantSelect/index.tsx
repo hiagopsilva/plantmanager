@@ -11,13 +11,19 @@ type EnvironmentProps = {
 }
 
 const PlantSelect: FC = () => {
-  const [environments, setEnvironments] = useState<EnvironmentProps>();
+  const [environments, setEnvironments] = useState<EnvironmentProps[]>([]);
 
   useEffect(() => {
      const fetchEnvironment = async () => {
       const { data } = await api.get('plants_environments')
 
-      setEnvironments(data);
+      setEnvironments([
+        {
+          key: 'all',
+          title: 'Todos',
+        },
+        ...data
+      ]);
     }
 
     fetchEnvironment()
@@ -36,7 +42,7 @@ const PlantSelect: FC = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <EnvironmentButton title={item.title} active />
+          <EnvironmentButton title={item.title} />
         )}
       />  
     </WrapperList>
