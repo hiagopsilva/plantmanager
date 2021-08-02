@@ -10,7 +10,7 @@ export const Wrapper = styled.View`
   justify-content: space-between;
   align-items: center;
   padding-vertical: 20px;
-  margin-top: ${getStatusBarHeight()};
+  margin-top: ${getStatusBarHeight()}px;
 `;
 
 export const Content = styled.View`
