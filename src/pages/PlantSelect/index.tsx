@@ -28,10 +28,19 @@ const PlantSelect: FC = () => {
   const [environments, setEnvironments] = useState<EnvironmentProps[]>([]);
   const [plants, setPlants] = useState<PlantsProps[]>([]);
   const [environmentSelected, setEnvironmentSelected] = useState('all');
+  const [filteredPlants, setFilteredPlants] = useState<PlantsProps[]>([]);
 
   const handleEnvironmentSelected = (environment: string) => {
     setEnvironmentSelected(environment)
 
+    if (environment === 'all')
+    return setFilteredPlants(plants)
+
+    const filtered = plants.filter(plant => 
+      plant.environments.includes(environment)
+    );
+
+    setFilteredPlants(filtered)
   }
 
   useEffect(() => {
@@ -84,7 +93,7 @@ const PlantSelect: FC = () => {
 
       <WrapperPlants>
         <PlantsList 
-          data={plants}
+          data={filteredPlants}
           showsVerticalScrollIndicator={false}
           numColumns={2}
           renderItem={({ item }) => (
