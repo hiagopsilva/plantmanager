@@ -15,13 +15,19 @@ export const Content = styled.View`
 export const WrapperList = styled.View`
 `;
 
-export const EnvironmentList = styled(FlatList).attrs({
-  contentContainerStyle: ''
-})`
+export const EnvironmentList = styled(FlatList)`
   height: 40px;
   padding-bottom: 5px;
   margin-left: 32px;
   margin-vertical: 32px;
+`;
+
+export const PlantsList = styled(FlatList)``;
+
+export const WrapperPlants = styled.View`
+  flex: 1;
+  padding-horizontal: 32px;
+  justify-content: center;
 `;
 
 export const Title = styled.Text`
