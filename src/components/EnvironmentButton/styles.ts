@@ -9,7 +9,7 @@ export const Wrapper = styled(RectButton)`
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  margin-right: 5px;
+  margin-horizontal: 5px;
   background: ${props => props.active ? colors.green_light : colors.shape};
 `;
 
