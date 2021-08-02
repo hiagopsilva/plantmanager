@@ -30,7 +30,7 @@ const PlantSelect: FC = () => {
 
   useEffect(() => {
     const fetchEnvironment = async () => {
-      const { data } = await api.get('plants_environments')
+      const { data } = await api.get('plants_environments?_sort=title&_order=asc')
 
       setEnvironments([
         {
@@ -46,7 +46,7 @@ const PlantSelect: FC = () => {
 
   useEffect(() => {
     const fetchPlants = async () => {
-      const { data } = await api.get('plants')
+      const { data } = await api.get('plants?_sort=name&_order=asc')
       setPlants(data);
     }
 
