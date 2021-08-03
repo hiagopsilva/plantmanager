@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { FC, useEffect, useState } from 'react';
 import { ActivityIndicator } from 'react-native'
 import { EnvironmentButton } from '../../components/EnvironmentButton';
@@ -37,6 +38,8 @@ const PlantSelect: FC = () => {
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
 
+  const navigation = useNavigation()
+
   const handleEnvironmentSelected = (environment: string) => {
     setEnvironmentSelected(environment)
 
@@ -75,6 +78,10 @@ const PlantSelect: FC = () => {
     setLoadingMore(true)
     setPage(oldValue => oldValue + 1);
     fetchPlants();
+  }
+
+  const handlePlantSelect = (plant: PlantsProps) => {
+    navigation.navigate('PlantSave')
   }
 
   useEffect(() => {
@@ -134,7 +141,7 @@ const PlantSelect: FC = () => {
             handleFetchMore(distanceFromEnd)
           }
           renderItem={({ item }) => (
-            <PlantCardPrimary data={item} />
+            <PlantCardPrimary data={item} onPress={() => handlePlantSelect(item)}/>
           )}
           ListFooterComponent={
             loadingMore
