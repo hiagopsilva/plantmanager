@@ -36,7 +36,6 @@ const PlantSelect: FC = () => {
 
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
-  const [loadedAll, setLoadedAll] = useState(false);
 
   const handleEnvironmentSelected = (environment: string) => {
     setEnvironmentSelected(environment)
