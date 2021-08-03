@@ -27,12 +27,11 @@ const UserIdentification: FC = () => {
     setName(value)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if(!name)
       return Alert.alert('Me diz como chamar você 😢')
 
-      AsyncStorage
-
+    await AsyncStorage.setItem('@plantmanager:user', name);
     navigation.navigate('Confirmation')
   }
 
