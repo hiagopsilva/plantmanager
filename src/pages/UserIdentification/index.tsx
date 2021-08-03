@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Keyboard, Platform, TouchableWithoutFeedback } from 'react-native';
 import { Button } from '../../components/Button';
 import { Container, Wrapper, Content, WrapperForm, ContentForm,  SmileIcon, Title, Input, Footer } from './styles'; 
+import { Alert } from 'react-native';
 
 const UserIdentification: FC = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -25,6 +26,9 @@ const UserIdentification: FC = () => {
   }
 
   const handleSubmit = () => {
+    if(!name)
+      return Alert.alert('Me diz como chamar você 😢')
+
     navigation.navigate('Confirmation')
   }
 
