@@ -111,6 +111,7 @@ const PlantSelect: FC = () => {
       <WrapperList>
         <EnvironmentList 
           data={environments}
+          keyExtractor={(item) => String(item.key)}
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
@@ -126,6 +127,7 @@ const PlantSelect: FC = () => {
       <WrapperPlants>
         <PlantsList 
           data={filteredPlants}
+          keyExtractor={(item) => String(item.id)}
           showsVerticalScrollIndicator={false}
           numColumns={2}
           onEndReachedThreshold={0.1}
