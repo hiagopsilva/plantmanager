@@ -1,9 +1,11 @@
 import React, { FC, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Keyboard, Platform, TouchableWithoutFeedback } from 'react-native';
+import { Alert } from 'react-native';
+
 import { Button } from '../../components/Button';
 import { Container, Wrapper, Content, WrapperForm, ContentForm,  SmileIcon, Title, Input, Footer } from './styles'; 
-import { Alert } from 'react-native';
 
 const UserIdentification: FC = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -28,6 +30,8 @@ const UserIdentification: FC = () => {
   const handleSubmit = () => {
     if(!name)
       return Alert.alert('Me diz como chamar você 😢')
+
+      AsyncStorage
 
     navigation.navigate('Confirmation')
   }
