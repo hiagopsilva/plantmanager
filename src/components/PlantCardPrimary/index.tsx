@@ -12,7 +12,7 @@ interface Props extends RectButtonProps {
 
 const PlantCardPrimary: FC<Props> = ({data, ...rest}) => {
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <Image uri={data.photo} />
       <Text>{data.name}</Text>
     </Wrapper>
