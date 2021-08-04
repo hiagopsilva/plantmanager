@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker'
 import { Alert, Platform } from 'react-native';
 import { format, isBefore } from 'date-fns';
@@ -30,6 +30,8 @@ const PlantSave: FC = () => {
   const [selectedDateTime, setSelectedDateTime] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(Platform.OS == 'ios');
 
+  const navigation = useNavigation()
+
   const route = useRoute()
   const { plant } = route.params as Params;
 
@@ -54,7 +56,14 @@ const PlantSave: FC = () => {
     try {
       await savePlant({...plant, dateTimeNotification: selectedDateTime})
 
-      await loadPlant()
+      navigation.navigate('Confirmation', {
+        title: 'Tudo certo ',
+        subtitle: 
+          'Fique tranquilo que sempre vamos lembrar você de cuidar da sua plantinha com muito cuidado.',
+        buttonTitle: 'Muito obrigado :D',
+        icon: 'hug',
+        nextScreen: 'MyPlants'
+      })
     } catch {
       Alert.alert("Não foi possível salvar. 😢")
     }
