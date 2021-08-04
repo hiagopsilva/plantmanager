@@ -81,7 +81,7 @@ const PlantSelect: FC = () => {
   }
 
   const handlePlantSelect = (plant: PlantsProps) => {
-    navigation.navigate('PlantSave')
+    navigation.navigate('PlantSave', { plant })
   }
 
   useEffect(() => {
