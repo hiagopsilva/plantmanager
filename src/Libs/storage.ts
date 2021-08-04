@@ -14,3 +14,9 @@ export interface PlantProps {
   }
   dateTimeNotification: Date;
 }
+
+export interface a {
+  [id: string]: {
+    data: PlantProps;
+  }
+}
