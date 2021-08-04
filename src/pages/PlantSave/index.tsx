@@ -5,7 +5,7 @@ import { Alert, Platform } from 'react-native';
 import { format, isBefore } from 'date-fns';
 
 import waterDrop from '../../assets/waterdrop.png'
-import { PlantProps } from '../../Libs/storage';
+import { loadPlant, PlantProps, savePlant } from '../../Libs/storage';
 import { 
   Container,
   Wrapper, 
@@ -49,6 +49,16 @@ const PlantSave: FC = () => {
   const handleOpenDatetimePickerForAndroid = () => {
     setShowDatePicker(oldState => !oldState)
   }
+
+  const handleSave = async () => {
+    try {
+      await savePlant({...plant, dateTimeNotification: selectedDateTime})
+
+      await loadPlant()
+    } catch {
+      Alert.alert("Não foi possível salvar. 😢")
+    }
+  }
   
   return (
     <Container>
@@ -91,7 +101,7 @@ const PlantSave: FC = () => {
           )
         } 
 
-        <ButtonStyled title="Cadastrar planta" onPress={() => {}}/>
+        <ButtonStyled title="Cadastrar planta" onPress={handleSave}/>
       </WrapperController>
     </Container>
   )
