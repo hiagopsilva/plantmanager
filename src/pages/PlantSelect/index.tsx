@@ -10,19 +10,26 @@ import { PlantProps } from '../../Libs/storage';
 import api from '../../services/api';
 import colors from '../../styles/colors';
 
-import { Wrapper, Content, Title, SubTitle, WrapperList, EnvironmentList, PlantsList, WrapperPlants } from './styles'; 
+import {
+  Wrapper, 
+  Content, 
+  Title, 
+  SubTitle, 
+  WrapperList, 
+  EnvironmentList, 
+  PlantsList, 
+  WrapperPlants 
+} from './styles'; 
 
 type EnvironmentProps = {
   key: string;
   title: string
 }
 
-
-
 const PlantSelect: FC = () => {
   const [environments, setEnvironments] = useState<EnvironmentProps[]>([]);
   const [plants, setPlants] = useState<PlantProps[]>([]);
-  const [filteredPlants, setFilteredPlants] = useState<PlantsProps[]>([]);
+  const [filteredPlants, setFilteredPlants] = useState<PlantProps[]>([]);
   const [environmentSelected, setEnvironmentSelected] = useState('all');
   const [loading, setLoading] = useState(true);
 
@@ -71,7 +78,7 @@ const PlantSelect: FC = () => {
     fetchPlants();
   }
 
-  const handlePlantSelect = (plant: PlantsProps) => {
+  const handlePlantSelect = (plant: PlantProps) => {
     navigation.navigate('PlantSave', { plant })
   }
 
