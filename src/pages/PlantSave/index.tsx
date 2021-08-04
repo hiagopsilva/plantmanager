@@ -1,8 +1,11 @@
 import React, { FC, useState } from 'react';
 import { useRoute } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker'
+import { Alert, Platform } from 'react-native';
+import { format, isBefore } from 'date-fns';
 
 import waterDrop from '../../assets/waterdrop.png'
+import { PlantProps } from '../../Libs/storage';
 import { 
   Container,
   Wrapper, 
@@ -18,22 +21,9 @@ import {
   DateTimePickerText,
   DateTimePickerButton
 } from './styles'; 
-import { Alert, Platform } from 'react-native';
-import { format, isBefore } from 'date-fns';
 
 interface Params {
-  plant: {
-    id: number;
-    name: string;
-    about: string;
-    water_tips: string;
-    photo: string;
-    environments: string;
-    frequency: {
-      times: number;
-      repeat_every: string
-    }
-  }
+  plant: PlantProps
 }
 
 const PlantSave: FC = () => {

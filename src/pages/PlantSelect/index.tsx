@@ -1,10 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FC, useEffect, useState } from 'react';
 import { ActivityIndicator } from 'react-native'
+
 import { EnvironmentButton } from '../../components/EnvironmentButton';
 import { Header } from '../../components/Header';
 import Loading from '../../components/Loading';
 import PlantCardPrimary from '../../components/PlantCardPrimary';
+import { PlantProps } from '../../Libs/storage';
 import api from '../../services/api';
 import colors from '../../styles/colors';
 
@@ -15,22 +17,11 @@ type EnvironmentProps = {
   title: string
 }
 
-type PlantsProps = {
-  id: number;
-  name: string;
-  about: string;
-  water_tips: string;
-  photo: string;
-  environments: string;
-  frequency: {
-    times: number;
-    repeat_every: string
-  }
-}
+
 
 const PlantSelect: FC = () => {
   const [environments, setEnvironments] = useState<EnvironmentProps[]>([]);
-  const [plants, setPlants] = useState<PlantsProps[]>([]);
+  const [plants, setPlants] = useState<PlantProps[]>([]);
   const [filteredPlants, setFilteredPlants] = useState<PlantsProps[]>([]);
   const [environmentSelected, setEnvironmentSelected] = useState('all');
   const [loading, setLoading] = useState(true);
