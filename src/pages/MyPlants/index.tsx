@@ -15,6 +15,7 @@ import {
 } from './styles'; 
 import { pt } from 'date-fns/locale';
 import { PlantCardSecondary } from '../../components/PlantCardSecondary';
+import Loading from '../../components/Loading';
 
 type Props = {}
 
@@ -42,6 +43,9 @@ const MyPlants: FC<Props> = () => {
     }
     loadStorageData()
   },[]);
+
+  if (loading) 
+  return <Loading />
 
   return (
     <Wrapper>
