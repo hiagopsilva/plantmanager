@@ -55,7 +55,7 @@ export const PlantAbout = styled.Text`
 
 export const WrapperController = styled.View`
   background: ${colors.white};
-  padding: 20px 20px ${`${getBottomSpace()}px` || `20px`}
+  padding: 20px 20px ${`${getBottomSpace()}px` || `20px`};
 `;
 
 export const TipContainer = styled.View`

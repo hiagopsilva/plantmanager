@@ -17,7 +17,7 @@ export const WrapperList = styled.View`
 `;
 
 export const EnvironmentList = styled(FlatList)`
-  height: 40px;
+  height: 45px;
   padding-bottom: 5px;
   margin-left: 32px;
   margin-vertical: 32px;
