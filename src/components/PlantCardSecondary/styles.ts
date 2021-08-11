@@ -44,5 +44,19 @@ export const TextTime = styled.Text`
   margin-top: 5px;
   font-size: 16px;
   font-family: ${fonts.heading};
-  color: ${colors.body_dark}
+  color: ${colors.body_dark};
 `;
+
+export const ButtonRemove = styled(RectButton)`
+  width: 100px;
+  height: 85px;
+  background-color: ${colors.red};
+  margin-top: 15px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 20px;
+  padding-left: 15px;
+`;
+
