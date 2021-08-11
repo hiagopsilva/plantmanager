@@ -19,7 +19,6 @@ export const Content = styled.View`
 
 export const Title = styled.Text`
   font-size: 28px;
-  font-weight: bold;
   text-align: center;
   color: ${colors.heading};
   margin-top: 38px;
