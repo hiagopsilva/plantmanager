@@ -21,6 +21,13 @@ export const Wrapper = styled.View`
   background: ${colors.shape};
 `;
 
+export const ScrollView = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    flex: 1
+  }
+})``;
+
 export const Image = styled.Image`
   width: 56px;
   height: 56px;
