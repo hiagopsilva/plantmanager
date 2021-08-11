@@ -45,7 +45,7 @@ const AppRoutes: React.FC = () => {
 
       <StackRoutes.Screen
         name="MyPlants" 
-        component={MyPlants}
+        component={AuthRoutes}
       />
     </StackRoutes.Navigator>
   );
