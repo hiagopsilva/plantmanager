@@ -6,6 +6,7 @@ import fonts from '../../styles/fonts';
 
 export const Wrapper = styled.View`
   flex: 1;
+  background: ${colors.background};
 `;
 
 export const Content = styled.View`
